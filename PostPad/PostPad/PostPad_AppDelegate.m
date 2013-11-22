@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 MoreThan90. All rights reserved.
 //
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 #import "PostPad_AppDelegate.h"
 
 #import "PostPad_MasterViewController.h"
@@ -16,16 +18,28 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     splitViewController.delegate = (id)navigationController.topViewController;
+    
 
     UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
     PostPad_MasterViewController *controller = (PostPad_MasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    //custom code
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xecf0f1)];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0x2c3e50)];
+    
+    masterNavigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+    navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
 }
 							

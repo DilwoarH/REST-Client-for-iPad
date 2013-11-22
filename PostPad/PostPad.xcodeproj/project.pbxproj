@@ -214,6 +214,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = MoreThan90;
 				TargetAttributes = {
+					972406FC183EE88A0084CCB9 = {
+						DevelopmentTeam = 6EQVKRKRBS;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+						};
+					};
 					97240725183EE88A0084CCB9 = {
 						TestTargetID = 972406FC183EE88A0084CCB9;
 					};
@@ -397,10 +405,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PostPad/PostPad-Prefix.pch";
 				INFOPLIST_FILE = "PostPad/PostPad-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -410,10 +421,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PostPad/PostPad-Prefix.pch";
 				INFOPLIST_FILE = "PostPad/PostPad-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -479,6 +493,7 @@
 				9724073A183EE88A0084CCB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9724073B183EE88A0084CCB9 /* Build configuration list for PBXNativeTarget "PostPadTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +502,7 @@
 				9724073D183EE88A0084CCB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
